@@ -1,0 +1,44 @@
+@media screen and (min-width: 1024px) {
+  
+  div.large_container {
+    display: unset;}
+        
+    div.mobile_container{
+    display: none;}
+      
+
+}
+
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+
+  div.large_container {
+  display: none;}
+      
+  div.mobile_container{
+  display: unset;}
+    
+  }
+  
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* background-color: black; */
+}
+
+canvas {
+  display: block;
+
+}
+
+h2{
+  color:white;
+}
+
+.slidecontainer{
+
+  position: fixed;
+  bottom: 0px;
+
+}
