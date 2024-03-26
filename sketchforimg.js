@@ -4,17 +4,21 @@ let displayedLetters = [];
 let slider;
 let fontSizeSlider;
 let size = 100;
-let padding = 400; 
+let padding = 400;
 let canvasHeight;
 
 // Load images for each letter
 let letterImages = {};
 
 function preload() {
-    // Load images for each letter
-    letterImages['a'] = loadImage('./font-image/a.png');
-    letterImages['e'] = loadImage('./font-image/e.png');
-    // letterImages['b'] = loadImage('b.png');
+
+    var letters = ['a',];
+
+
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
+        letterImages[letter] = loadImage('./font-image/' + letter + '.png');
+    }
 
 }
 
@@ -43,14 +47,14 @@ function draw() {
     textAlign(LEFT, CENTER);
     text("fontSize: ", 10, 20)
     text("fontWeight: ", 10, 40)
-    
+
     displayLetters(displayedLetters);
     updateDisplayedLetters();
 }
 
 function updateDisplayedLetters() {
     let inputText = inputField.value();
-    displayedLetters = inputText.toLowerCase(); 
+    displayedLetters = inputText.toLowerCase();
 }
 
 function displayLetters(letters) {
@@ -62,7 +66,7 @@ function displayLetters(letters) {
         let letter = letters[i];
         if (letter in letterImages) {
             drawLetter(letterImages[letter], startX, startY);
-            startX += size + padding; 
+            startX += size + padding;
             if (startX + size > width) {
                 startX = padding + 20;
                 startY += size + padding;
